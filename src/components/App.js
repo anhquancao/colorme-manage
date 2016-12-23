@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {Link, IndexLink} from 'react-router';
+// import {Link, IndexLink} from 'react-router';
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -7,7 +7,7 @@ import {Link, IndexLink} from 'react-router';
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div id="wrapper">
         <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div className="navbar-header">
             <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">

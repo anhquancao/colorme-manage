@@ -43,11 +43,11 @@ class HomePage extends React.Component {
                 <div className="panel-heading">
                   <div className="row">
                     <div className="col-xs-3">
-                      <i className="fa fa-comments fa-5x"></i>
+                      <i className="fa fa-comments fa-3x"></i>
                     </div>
                     <div className="col-xs-9 text-right">
-                      <div className="huge">{this.props.registers_count}</div>
-                      <div>Số lượng đăng kí</div>
+                      <div className="huge">{this.props.remain_days}</div>
+                      <div>Số ngày còn lại</div>
                     </div>
                   </div>
                 </div>
@@ -65,10 +65,10 @@ class HomePage extends React.Component {
                 <div className="panel-heading">
                   <div className="row">
                     <div className="col-xs-3">
-                      <i className="fa fa-tasks fa-5x"></i>
+                      <i className="fa fa-tasks fa-3x"></i>
                     </div>
                     <div className="col-xs-9 text-right">
-                      <div className="huge">{this.props.total_money}</div>
+                      <div className="huge">{this.props.total_money}K</div>
                       <div>Tổng tiền</div>
                     </div>
                   </div>
@@ -87,11 +87,11 @@ class HomePage extends React.Component {
                 <div className="panel-heading">
                   <div className="row">
                     <div className="col-xs-3">
-                      <i className="fa fa-shopping-cart fa-5x"></i>
+                      <i className="fa fa-shopping-cart fa-3x"></i>
                     </div>
                     <div className="col-xs-9 text-right">
-                      <div className="huge">124</div>
-                      <div>New Orders!</div>
+                      <div className="huge">{this.props.registers_number}</div>
+                      <div>Số người đăng kí</div>
                     </div>
                   </div>
                 </div>
@@ -109,11 +109,11 @@ class HomePage extends React.Component {
                 <div className="panel-heading">
                   <div className="row">
                     <div className="col-xs-3">
-                      <i className="fa fa-support fa-5x"></i>
+                      <i className="fa fa-support fa-3x"></i>
                     </div>
                     <div className="col-xs-9 text-right">
-                      <div className="huge">13</div>
-                      <div>Support Tickets!</div>
+                      <div className="huge">{this.props.paid_number}</div>
+                      <div>Học viên đóng tiền</div>
                     </div>
                   </div>
                 </div>
@@ -287,7 +287,10 @@ class HomePage extends React.Component {
 
 HomePage.propTypes = {
   registers_count: PropTypes.number.isRequired,
-  total_money: PropTypes.number.isRequired
+  total_money: PropTypes.string.isRequired,
+  registers_number: PropTypes.number.isRequired,
+  paid_number: PropTypes.number.isRequired,
+  remain_days: PropTypes.number.isRequired
 
 };
 
