@@ -7,10 +7,12 @@ export default {
     isLoading: false,
     remain_days: 0
   },
-  login:{
-    email:"",
-    password:""
+  login: {
+    email: "",
+    password: ""
   },
-  user:{
+  user: {},
+  registerList: {
+    registers: []
   }
 };
