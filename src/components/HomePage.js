@@ -66,7 +66,7 @@ class HomePage extends React.Component {
                     </div>
                     <div className="col-xs-9 text-right">
                       <div className="huge">{this.props.registers_number}</div>
-                      <div>Học viên đăng kí</div>
+                      <div>Lượt đăng kí</div>
                     </div>
                   </div>
                 </div>
@@ -134,8 +134,8 @@ class HomePage extends React.Component {
                       <i className="fa fa-comments fa-3x"></i>
                     </div>
                     <div className="col-xs-9 text-right">
-                      <div className="huge">{this.props.remain_days}</div>
-                      <div>Số ngày còn lại</div>
+                      <div className="huge">{this.props.total_money}K</div>
+                      <div>Tổng tiền hôm nay</div>
                     </div>
                   </div>
                 </div>
@@ -156,8 +156,8 @@ class HomePage extends React.Component {
                       <i className="fa fa-tasks fa-3x"></i>
                     </div>
                     <div className="col-xs-9 text-right">
-                      <div className="huge">{this.props.total_money}K</div>
-                      <div>Tổng tiền</div>
+                      <div className="huge">{this.props.registers_number}</div>
+                      <div>Lượt đăng kí hôm nay</div>
                     </div>
                   </div>
                 </div>

@@ -21,7 +21,7 @@ class DashboardContainer extends React.Component {
 
       charts.pieChart("#campaign-chart", []);
 
-      charts.barChartDoubleLine("#register-by-date-chart", this.props.date_array, this.props.registers_by_date);
+      charts.barChartDoubleLine("#register-by-date-chart", this.props.date_array, this.props.registers_by_date, this.props.paid_by_date);
 
       // barchartSingleLine.barChartSingleLine("#register-by-hour-chart",
       //   [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23],

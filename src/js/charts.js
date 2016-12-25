@@ -21,7 +21,7 @@ export function barChartSingleLine(id, labels, data) {
   new Chart(barChartContext).Bar(dataBarChart);
 }
 
-export function barChartDoubleLine(id, labels, data) {
+export function barChartDoubleLine(id, labels, data1, data2) {
   let firstBarChart = "#7CABFF";
   let secondBarChart = "#E873A6";
 
@@ -35,7 +35,7 @@ export function barChartDoubleLine(id, labels, data) {
         strokeColor: firstBarChart,
         highlightFill: firstBarChart,
         highlightStroke: firstBarChart,
-        data: data
+        data: data1
       },
       {
         label: "My Second dataset",
@@ -43,7 +43,7 @@ export function barChartDoubleLine(id, labels, data) {
         strokeColor: secondBarChart,
         highlightFill: secondBarChart,
         highlightStroke: secondBarChart,
-        data: data
+        data: data2
       }
     ]
   };
@@ -51,7 +51,7 @@ export function barChartDoubleLine(id, labels, data) {
   new Chart(barChartContext).Bar(dataBarChart);
 }
 
-export function lineChart(id,labels,data) {
+export function lineChart(id, labels, data) {
   let chartColor = "#7CABFF";
   let moneyByDateLineChartContext = $(id).get(0).getContext("2d");
   var moneyByDateLineChartData = {
