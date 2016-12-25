@@ -2,22 +2,102 @@
  * Created by Phan M Duong on 12/25/2016.
  */
 export function barChartSingleLine(id, labels, data) {
+  let chartColor = "#E873A6";
   let barChartContext = $(id).get(0).getContext("2d");
   let dataBarChart = {
     labels: labels,
     datasets: [
       {
         label: "My First dataset",
-        fillColor: "rgba(151,187,205,1)",
-        strokeColor: "rgba(151,187,205,1)",
-        highlightFill: "rgba(151,187,205,1)",
-        highlightStroke: "rgba(151,187,205,1)",
+        fillColor: chartColor,
+        strokeColor: chartColor,
+        highlightFill: chartColor,
+        highlightStroke: chartColor,
         data: data
       }
     ]
   };
 
-  /* jshint ignore:start*/
   new Chart(barChartContext).Bar(dataBarChart);
-  /* jshint ignore:end */
+}
+
+export function barChartDoubleLine(id, labels, data) {
+  let firstBarChart = "#7CABFF";
+  let secondBarChart = "#E873A6";
+
+  let barChartContext = $(id).get(0).getContext("2d");
+  let dataBarChart = {
+    labels: labels,
+    datasets: [
+      {
+        label: "My First dataset",
+        fillColor: firstBarChart,
+        strokeColor: firstBarChart,
+        highlightFill: firstBarChart,
+        highlightStroke: firstBarChart,
+        data: data
+      },
+      {
+        label: "My Second dataset",
+        fillColor: secondBarChart,
+        strokeColor: secondBarChart,
+        highlightFill: secondBarChart,
+        highlightStroke: secondBarChart,
+        data: data
+      }
+    ]
+  };
+
+  new Chart(barChartContext).Bar(dataBarChart);
+}
+
+export function lineChart(id,labels,data) {
+  let chartColor = "#7CABFF";
+  let moneyByDateLineChartContext = $(id).get(0).getContext("2d");
+  var moneyByDateLineChartData = {
+    labels: labels,
+    datasets: [
+      {
+        label: "My First dataset",
+        fillColor: chartColor,
+        strokeColor: chartColor,
+        pointColor: chartColor,
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: chartColor,
+        data: data
+      }
+    ]
+  };
+
+  new Chart(moneyByDateLineChartContext).Line(moneyByDateLineChartData);
+}
+export function pieChart(id, data) {
+  let pieChartContext = $(id).get(0).getContext("2d");
+  let dataChart = [
+    {
+      value: 300,
+      color: "#F7464A",
+      highlight: "#FF5A5E",
+      label: "Red"
+    },
+    {
+      value: 50,
+      color: "#46BFBD",
+      highlight: "#5AD3D1",
+      label: "Green"
+    },
+    {
+      value: 100,
+      color: "#FDB45C",
+      highlight: "#FFC870",
+      label: "Yellow"
+    }
+  ];
+
+  // eslint-disable-next-line no-use-before-define
+  new Chart(pieChartContext)
+    .Pie(dataChart, {
+      animateRotate: false
+    });
 }

@@ -24,7 +24,10 @@ export default function dashboardReducer(state = initialState.dashboard, action)
           paid_by_date: action.paid_by_date,
           registers_by_hour: action.registers_by_hour,
           orders_by_hour: action.orders_by_hour,
-          month_ago: action.month_ago
+          month_ago: action.month_ago,
+          uncalled_number: action.uncalled_number,
+          zero_paid_num: action.zero_paid_num,
+          total_classes: action.total_classes,
 
         });
     default:

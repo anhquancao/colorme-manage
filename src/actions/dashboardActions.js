@@ -22,7 +22,10 @@ export function loadDashboardData(genId) {
           paid_by_date: res.data.paid_by_date,
           registers_by_hour: res.data.registers_by_hour,
           orders_by_hour: res.data.orders_by_hour,
-          month_ago: res.data.month_ago
+          month_ago: res.data.month_ago,
+          uncalled_number: res.data.uncalled_number,
+          zero_paid_num: res.data.zero_paid_num,
+          total_classes: res.data.total_classes,
         });
       });
 
