@@ -9,18 +9,13 @@ body, html {
   background-color: white!important;
 }
 
+td {
+  vertical-align: middle!important;
+}
+
 .card-container.card {
   max-width: 350px;
   padding: 40px 40px;
-}
-
-.btn {
-  font-weight: 700;
-  height: 36px;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  cursor: default;
 }
 
 /*

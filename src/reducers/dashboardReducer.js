@@ -16,7 +16,16 @@ export default function dashboardReducer(state = initialState.dashboard, action)
           total_money: action.total_money,
           registers_number: action.registers_number,
           paid_number: action.paid_number,
-          remain_days: action.remain_days
+          remain_days: action.remain_days,
+          date_array: action.date_array,
+          money_by_date: action.money_by_date,
+          classes: action.classes,
+          registers_by_date: action.registers_by_date,
+          paid_by_date: action.paid_by_date,
+          registers_by_hour: action.registers_by_hour,
+          orders_by_hour: action.orders_by_hour,
+          month_ago: action.month_ago
+
         });
     default:
       return state;

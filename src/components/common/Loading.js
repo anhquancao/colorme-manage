@@ -6,7 +6,7 @@ class Loading extends React.Component {
     }
   render() {
     return (
-      <h5>Loading...</h5>
+      <div style={{textAlign:"center"}}>Loading...</div>
     );
   }
 }

@@ -6,10 +6,18 @@ export function loadRegisterListData(page) {
     dispatch({type: types.BEGIN_LOAD_REGISTER_LIST_DATA});
     registerListApi.loadRegisterListData(page)
       .then(function (res) {
-        dispatch({
-          type: types.LOAD_REGISTER_LIST_DATA,
-          registers: res.data.registers
-        });
+        if (page == 1) {
+          dispatch({
+            type: types.LOAD_REGISTER_LIST_DATA,
+            registers: res.data.registers
+          });
+        } else {
+          dispatch({
+            type: types.LOAD_MORE_REGISTER_LIST_DATA,
+            registers: res.data.registers
+          });
+        }
+
       });
 
   }

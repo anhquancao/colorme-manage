@@ -1,9 +1,15 @@
 import React, {PropTypes} from 'react';
+import Loading from '../components/common/Loading';
 
 class RegisterListComponent extends React.Component {
   constructor(props, context) {
     super(props, context);
+    // this.foo = this.foo.bind(this)
   }
+
+  // foo(){
+  //
+  // }
 
   render() {
     return (
@@ -42,11 +48,16 @@ class RegisterListComponent extends React.Component {
                       </tr>
                     )
                   })}
-
                   </tbody>
                 </table>
               </div>
             </div>
+            {!this.props.isLoading ? (
+                <div style={{textAlign: "center"}}>
+                  <button onClick={this.props.loadMore} type="button" className="btn btn-default">Tải thêm</button>
+                </div>
+              ) : <Loading/>}
+
           </div>
         </div>
       </div>
@@ -56,7 +67,9 @@ class RegisterListComponent extends React.Component {
 
 RegisterListComponent.propTypes = {
   // myProp: PropTypes.string.isRequired
-  registers: PropTypes.array.isRequired
+  registers: PropTypes.array.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  loadMore: PropTypes.func.isRequired
 };
 
 export default RegisterListComponent;

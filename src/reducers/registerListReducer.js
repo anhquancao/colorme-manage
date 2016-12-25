@@ -15,6 +15,13 @@ export default function dashboardReducer(state = initialState.registerList, acti
           registers: action.registers
         }
       );
+    case types.LOAD_MORE_REGISTER_LIST_DATA:
+      return Object.assign({}, state,
+        {
+          isLoading: false,
+          registers: [...state.registers, ...action.registers]
+        }
+      );
     default:
       return state;
   }
