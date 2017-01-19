@@ -27,5 +27,10 @@ export default {
   registerList: {
     registers: [],
     isLoading: false
+  },
+  genList: {
+    gens: [],
+    isLoading: false
   }
+
 };

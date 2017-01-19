@@ -54,7 +54,7 @@ export function barChartDoubleLine(id, labels, data1, data2) {
 export function lineChart(id, labels, data) {
   let chartColor = "#7CABFF";
   let moneyByDateLineChartContext = $(id).get(0).getContext("2d");
-  var moneyByDateLineChartData = {
+  let moneyByDateLineChartData = {
     labels: labels,
     datasets: [
       {
@@ -72,7 +72,7 @@ export function lineChart(id, labels, data) {
 
   new Chart(moneyByDateLineChartContext).Line(moneyByDateLineChartData);
 }
-export function pieChart(id, data) {
+export function pieChart(id) {
   let pieChartContext = $(id).get(0).getContext("2d");
   let dataChart = [
     {

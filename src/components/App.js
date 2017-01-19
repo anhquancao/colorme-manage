@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-// import {Link, IndexLink} from 'react-router';
+import {Link} from 'react-router';
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -16,7 +16,7 @@ class App extends React.Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" href="index.html">SB Admin</a>
+            <Link className="navbar-brand" to="/">color ME </Link>
           </div>
 
           <ul className="nav navbar-right top-nav">
@@ -125,7 +125,7 @@ class App extends React.Component {
           <div className="collapse navbar-collapse navbar-ex1-collapse">
             <ul className="nav navbar-nav side-nav">
               <li className="active">
-                <a href="index.html"><i className="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                <a href="index.html"><i className="fa fa-fw fa-dashboard"></i> Trang chủ</a>
               </li>
               <li>
                 <a href="charts.html"><i className="fa fa-fw fa-bar-chart-o"></i> Charts</a>

@@ -1,12 +1,14 @@
 import React from 'react';
 
 class Loading extends React.Component {
-    constructor(props, context){
-        super(props, context);
-    }
+  constructor(props, context) {
+    super(props, context);
+  }
+
   render() {
     return (
-      <div style={{textAlign:"center"}}>Loading...</div>
+        <h3 style={{width: '100%', textAlign: 'center'}}><i className="fa fa-refresh fa-spin"></i> Loading</h3>
+
     );
   }
 }
