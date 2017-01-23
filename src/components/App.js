@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
+import {Link, IndexLink} from 'react-router';
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -124,8 +124,8 @@ class App extends React.Component {
           </ul>
           <div className="collapse navbar-collapse navbar-ex1-collapse">
             <ul className="nav navbar-nav side-nav">
-              <li className="active">
-                <a href="index.html"><i className="fa fa-fw fa-dashboard"></i> Trang chủ</a>
+              <li>
+                <IndexLink to="/" activeClassName="active" ><i className="fa fa-fw fa-dashboard"></i> Trang chủ</IndexLink>
               </li>
               <li>
                 <a href="charts.html"><i className="fa fa-fw fa-bar-chart-o"></i> Charts</a>
@@ -143,14 +143,13 @@ class App extends React.Component {
                 <a href="bootstrap-grid.html"><i className="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
               </li>
               <li>
-                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i
-                  className="fa fa-fw fa-arrows-v"></i> Dropdown <i className="fa fa-fw fa-caret-down"></i></a>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i className="fa fa-fw fa-arrows-v"></i> Dropdown <i className="fa fa-fw fa-caret-down"></i></a>
                 <ul id="demo" className="collapse">
                   <li>
-                    <a href="#">Dropdown Item</a>
+                    <Link to="/" activeClassName="active" >Dropdown Item</Link>
                   </li>
                   <li>
-                    <a href="#">Dropdown Item</a>
+                    <Link to="/" activeClassName="active" >Dropdown Item</Link>
                   </li>
                 </ul>
               </li>
