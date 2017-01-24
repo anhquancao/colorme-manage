@@ -1,13 +1,13 @@
 import * as types from '../constants/actionTypes';
 import * as gensApi from "../apis/GensApi";
 
-export function beginLoadgGensData() {
+export function beginLoadGensData() {
   return {type: types.BEGIN_LOAD_GENS_DATA};
 }
 
 export function loadGensData() {
   return function (dispatch) {
-    dispatch(beginLoadgGensData());
+    dispatch(beginLoadGensData());
     gensApi.loadGensApi()
       .then(function (res) {
         dispatch(loadedGensData(res));

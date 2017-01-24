@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux';
 import HomePage from '../components/dashboard/Dashboard';
 import Loading from '../components/common/Loading';
 import GenList from '../components/dashboard/GenList';
-import HeaderDashboard from '../components/dashboard/HeaderDashboard';
+import Header from '../components/Header';
 
 import * as charts from '../js/charts';
 // Import actions here!!
@@ -53,7 +53,7 @@ class DashboardContainer extends React.Component {
 
         <div className="container-fluid">
 
-          <HeaderDashboard/>
+          <Header header="Thống kê tổng quan" title="Trang chủ" iconTitle="fa fa-fw fa-dashboard"/>
 
           {this.props.genIsLoading ? ( <Loading/>) : (
               <div>

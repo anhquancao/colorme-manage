@@ -1,15 +1,15 @@
 import React from 'react';
 
-const HeaderDashBoard = () => {
+const HeaderDashBoard = ({header, title, iconTitle}) => {
   return (
     <div className="row">
       <div className="col-lg-12">
         <h1 className="page-header">
-          Thống kê tổng quan
+          {header}
         </h1>
         <ol className="breadcrumb">
           <li className="active">
-            <i className="fa fa-dashboard"></i> Trang chủ
+            <i className={iconTitle}></i> {title}
           </li>
         </ol>
       </div>

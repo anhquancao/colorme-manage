@@ -2,7 +2,6 @@ import * as types from '../constants/actionTypes';
 import initialState from './initialState';
 
 export default function dashboardReducer(state = initialState.dashboard, action) {
-
   switch (action.type) {
     case types.BEGIN_LOAD_DASHBOARD_DATA:
       return Object.assign({}, state, {

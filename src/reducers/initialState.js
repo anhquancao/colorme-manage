@@ -31,6 +31,16 @@ export default {
   genList: {
     gens: [],
     isLoading: false
+  },
+
+  searchRegisters: {
+    isLoading: false,
+    data: {
+      next_code: "",
+      next_waiting_code: "",
+      users: []
+    },
+    status: 0
   }
 
 };

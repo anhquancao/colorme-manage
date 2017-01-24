@@ -128,6 +128,17 @@ class App extends React.Component {
                 <IndexLink to="/" activeClassName="active" ><i className="fa fa-fw fa-dashboard"></i> Trang chủ</IndexLink>
               </li>
               <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#demo1"><i className="fa fa-fw fa-edit"></i> Quản lý tài chính <i className="fa fa-fw fa-caret-down"></i></a>
+                <ul id="demo1" className="collapse">
+                  <li>
+                    <Link to="collect-money" activeClassName="active" >Thu tiền học</Link>
+                  </li>
+                  <li>
+                    <Link to="/" activeClassName="active" >Dropdown Item</Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
                 <a href="charts.html"><i className="fa fa-fw fa-bar-chart-o"></i> Charts</a>
               </li>
               <li>
