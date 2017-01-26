@@ -12,13 +12,24 @@ class CollectMoneyContainer extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.textSearchRegistersChange = this.textSearchRegistersChange.bind(this);
+    this.changeDropdownOpen = this.changeDropdownOpen.bind(this);
+    this.state = {idDropdown: -1};
+
   }
 
   textSearchRegistersChange(text) {
     this.props.searchRegisterActions.loadSearchRegistersData(text);
   }
 
+  changeDropdownOpen(idDropdown) {
+    console.log(idDropdown);
+    this.setState({
+      idDropdown: idDropdown
+    });
+  }
+
   render() {
+    let that = this;
     return (
       <div id="page-wrapper">
 
@@ -27,11 +38,12 @@ class CollectMoneyContainer extends React.Component {
           <p>Mã học viên tiếp theo: <strong>{this.props.next_code}</strong></p>
           <TextSearchRegisters textSearchRegistersChange={this.textSearchRegistersChange}/>
           {this.props.isLoading ? <Loading/> : (
-                <ul className="nav">
-                  {this.props.users.map(function (user, index) {
-                    return <DropdownStudent index={index} key={index} user={user}/>
-                  })}
-                </ul>
+              <ul className="nav">
+                {this.props.users.map(function (user, index) {
+                  return (<DropdownStudent index={index} key={index} user={user} next_code={that.props.next_code}
+                                           onChangeDropdown={that.changeDropdownOpen} idDowndown={that.state.idDropdown}/>);
+                })}
+              </ul>
             )
           }
         </div>
