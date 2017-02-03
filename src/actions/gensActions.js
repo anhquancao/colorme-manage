@@ -12,7 +12,7 @@ export function loadGensData() {
       .then(function (res) {
         dispatch(loadedGensData(res));
       });
-  }
+  };
 }
 
 export function loadedGensData(res) {
@@ -25,6 +25,5 @@ export function loadedGensData(res) {
     {
       type: types.LOADED_GENS_DATA,
       gens: res.data.gens
-    })
-    ;
+    });
 }

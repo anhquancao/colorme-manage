@@ -21,7 +21,9 @@ export default {
   },
   login: {
     email: "",
-    password: ""
+    password: "",
+    token: "",
+    isLoading: false
   },
   user: {},
   registerList: {
@@ -30,7 +32,7 @@ export default {
   },
   genList: {
     gens: [],
-    isLoading: false
+    isLoading: true
   },
 
   searchRegisters: {

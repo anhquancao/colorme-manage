@@ -1,47 +1,78 @@
-/**
- * Created by Phan M Duong on 1/25/2017.
- */
 import React, {PropTypes} from 'react';
 
-const ItemClassStudentRegister = ({register, next_code}) => {
-  return (
-    <tr>
-      <td>{register.course}</td>
-      <td>{register.class}</td>
-      <td>{register.register_time}</td>
-      {
-        (register.is_paid != 0) ? (
-            <td>{register.code}</td>
-          ) : (
-            <td><input value={next_code} type="text" style={{maxWidth:'100px'}} className="form-control"/></td>
-          )}
-      {
-        (register.is_paid != 0) ? (
-            <td>{register.money}</td>
-          ) : (
-            <td><input value={register.money} type="text" style={{maxWidth:'100px'}} className="form-control"/></td>
-          )}
-      {
-        (register.is_paid != 0) ? (
-            <td>{register.note}</td>
-          ) : (
-            <td><input value={register.note} type="text" style={{maxWidth:'100px'}} className="form-control"/></td>
-          )}
-      {
-        (register.is_paid != 0) ? (
-            <td>{register.paid_time}</td>
-          ) : (
-            <th style={{textAlign: 'center'}}>Chưa nộp</th>
-          )}
-          <td><button type="button" className="btn btn-success" style={{textAlign: 'center'}}>Nộp đủ</button></td>
-    </tr>
-  );
-};
+class ItemClassStudentRegister extends React.Component {
+  constructor(props, context) {
+    super(props, context);
+
+    let register = this.props.register;
+    register['code'] = this.props.next_code;
+    this.state = {
+      register: Object.assign({}, register)
+    }
+
+
+    this.onChangeCode = this.onChangeCode.bind(this);
+  }
+
+  onChangeCode(event) {
+    const field = event.target.name;
+    let register = this.state.register;
+    register[field] = event.target.value;
+    console.log(this.stat.register);
+    return this.setState = {
+      register: register
+    }
+  }
+
+  render() {
+    return (
+      <tr>
+        <td>{this.state.register.course}</td>
+        <td>{this.state.register.class}</td>
+        <td>{this.state.register.register_time}</td>
+        {
+          (this.state.register.is_paid != 0) ? (
+              <td>{this.state.register.code}</td>
+            ) : (
+              <td><input type="text" style={{wight: '100px'}} className="form-control" value={this.state.register.code}
+                         name="code"
+                         onChange={this.onChangeCode}/></td>
+            )}
+        {
+          (this.state.register.is_paid != 0) ? (
+              <td>{this.state.register.money}</td>
+            ) : (
+              <td><input value={this.state.register.money} type="text" style={{wight: '100px'}}
+                         className="form-control"/></td>
+            )}
+        {
+          (this.state.register.is_paid != 0) ? (
+              <td>{this.state.register.note}</td>
+            ) : (
+              <td><input value={this.state.register.note} type="text" style={{wight: '100px'}}
+                         className="form-control"/></td>
+            )}
+        {
+          (this.state.register.is_paid != 0) ? (
+              <td style={{textAlign: 'center'}}>{this.state.register.paid_time}</td>
+            ) : (
+              <th style={{textAlign: 'center'}}>Chưa nộp</th>
+            )}
+        <td>
+          <button className="btn btn-success" style={{textAlign: 'center'}} onClick={() => {
+            console.log(this.state.register)
+          }}>Nộp đủ
+          </button>
+        </td>
+      </tr>
+    );
+  }
+}
 
 ItemClassStudentRegister.propTypes = {
   register: PropTypes.object.isRequired,
-  next_code: PropTypes.string.isRequired
+  next_code: PropTypes.string.isRequired,
+  isSubmitting: PropTypes.bool.isRequired
 };
-
 
 export default ItemClassStudentRegister;

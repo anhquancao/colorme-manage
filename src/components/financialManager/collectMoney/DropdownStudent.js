@@ -27,8 +27,8 @@ class DropdownStudent extends React.Component {
                     <tr>
                       <th style={{textAlign: 'center'}}>Khóa học</th>
                       <th style={{textAlign: 'center'}}>Lớp</th>
-                      <th style={{textAlign: 'center'}} >Thời gian đăng kí</th>
-                      <th style={{textAlign: 'center'}} >Mã học viên</th>
+                      <th style={{textAlign: 'center'}}>Thời gian đăng kí</th>
+                      <th style={{textAlign: 'center'}}>Mã học viên</th>
                       <th style={{textAlign: 'center'}}>Tổng số tiền nộp</th>
                       <th style={{textAlign: 'center'}}>Ghi chú</th>
                       <th style={{textAlign: 'center'}}>Ngày nộp</th>
@@ -37,7 +37,8 @@ class DropdownStudent extends React.Component {
                     </thead>
                     <tbody>
                     {this.props.user.registers.map(function (register, index) {
-                      return (<ItemClassStudentRegister key={index} register={register} next_code={that.props.next_code}/>);
+                      return (
+                        <ItemClassStudentRegister key={index} register={register} next_code={that.props.next_code}/>);
                     })}
                     </tbody>
                   </table>
@@ -58,7 +59,7 @@ DropdownStudent.propTypes = {
   user: PropTypes.object.isRequired,
   onChangeDropdown: PropTypes.func.isRequired,
   idDowndown: PropTypes.number.isRequired,
-  next_code:PropTypes.string.isRequired
+  next_code: PropTypes.string.isRequired
 };
 
 export default DropdownStudent;

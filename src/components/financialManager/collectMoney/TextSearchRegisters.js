@@ -13,7 +13,8 @@ class TextSearchRegisters extends React.Component {
   render() {
     return (
       <div className="form-group">
-        <input className="form-control" placeholder="Email, tên hoặc số điện thoại học viên" onChange={this.onChangeText}/>
+        <input className="form-control" placeholder="Email, tên hoặc số điện thoại học viên"
+               onChange={this.onChangeText}/>
       </div>
     );
   }

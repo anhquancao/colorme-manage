@@ -28,6 +28,5 @@ export function loadDashboardData(genId) {
           total_classes: res.data.total_classes,
         });
       });
-
-  }
+  };
 }

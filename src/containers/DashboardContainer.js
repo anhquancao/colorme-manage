@@ -9,17 +9,20 @@ import Header from '../components/Header';
 import * as charts from '../js/charts';
 // Import actions here!!
 import * as dashboardActions from '../actions/dashboardActions';
-import * as coursesActions from '../actions/gensActions';
+import * as gensActions from '../actions/gensActions';
 
 class DashboardContainer extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.loadDashboardDataGen = this.loadDashboardDataGen.bind(this);
     this.changeGen = this.changeGen.bind(this);
+    let token = localStorage.getItem('token');
+    console.log(token);
+    if (token == null ) context.router.push('/login')
   }
 
   componentWillMount() {
-    // this.props.dashboardActions.loadDashboardData(13);
+    this.props.gensActions.loadGensData();
   }
 
   componentDidUpdate(prevProps) {
@@ -83,6 +86,7 @@ class DashboardContainer extends React.Component {
 
 DashboardContainer.propTypes = {
   dashboardActions: PropTypes.object.isRequired,
+  gensActions: PropTypes.object.isRequired,
   registers_count: PropTypes.number.isRequired,
   total_money: PropTypes.string.isRequired,
   registers_number: PropTypes.number.isRequired,
@@ -102,6 +106,10 @@ DashboardContainer.propTypes = {
   total_classes: PropTypes.number.isRequired,
   genList: PropTypes.array.isRequired,
   genIsLoading: PropTypes.bool.isRequired
+};
+
+DashboardContainer.contextTypes = {
+  router: PropTypes.object
 };
 
 function mapStateToProps(state) {
@@ -131,7 +139,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     dashboardActions: bindActionCreators(dashboardActions, dispatch),
-    coursesActions: bindActionCreators(coursesActions, dispatch)
+    gensActions: bindActionCreators(gensActions, dispatch),
   };
 }
 

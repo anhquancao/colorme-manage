@@ -4,8 +4,8 @@ import LoginContainer from './containers/LoginContainer';
 import App from './components/App';
 import DashboardContainer from './containers/DashboardContainer';
 import RegisterListContainer from './containers/RegisterListContainer';
-import CollectMoneyContainer from './containers/financialManager/CollectMoneyContainer'
-import NotFoundPage from './components/NotFoundPage.js';
+import CollectMoneyContainer from './containers/financialManager/CollectMoneyContainer';
+import NotFoundPage from './components/NotFoundPage';
 
 export default (
   <Route>
