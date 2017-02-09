@@ -7,6 +7,7 @@ class LoginComponent extends React.Component {
 
 
   render() {
+
     return (
       <div className="container">
         <div className="card card-container">
@@ -30,9 +31,10 @@ class LoginComponent extends React.Component {
           </form>
 
           {(!this.props.isLoading && this.props.token != "") ?
-            this.context.router.push('/') :
+            this.context.router.push('/'):
             this.props.isLoading ? (
-                <button className="btn btn-primary btn-lg btn-block btn-signin"><i className="fa fa-spinner fa-spin"/> Đang đăng nhập</button>
+                <button className="btn btn-primary btn-lg btn-block btn-signin"><i className="fa fa-spinner fa-spin"/>
+                  Đang đăng nhập</button>
               ) : (<button className="btn btn-lg btn-primary btn-block btn-signin" onClick={this.props.clickLogin}>
                 Đăng nhập</button>)}
 
@@ -51,6 +53,7 @@ LoginComponent.propTypes = {
   clickLogin: PropTypes.func.isRequired,
   isLoading: PropTypes.bool.isRequired,
   token: PropTypes.string.isRequired
+
 };
 
 LoginComponent.contextTypes = {

@@ -23,7 +23,11 @@ export default {
     email: "",
     password: "",
     token: "",
-    isLoading: false
+    isLoading: false,
+    error: false,
+    user: {
+      role: -1
+    }
   },
   user: {},
   registerList: {

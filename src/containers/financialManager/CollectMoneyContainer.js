@@ -22,7 +22,6 @@ class CollectMoneyContainer extends React.Component {
   }
 
   changeDropdownOpen(idDropdown) {
-    console.log(idDropdown);
     this.setState({
       idDropdown: idDropdown
     });

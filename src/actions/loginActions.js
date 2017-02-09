@@ -5,21 +5,30 @@ export function beginUpdateLoginForm() {
   return {type: types.BEGIN_UPDATE_LOGIN_FORM};
 }
 
+export function loginError() {
+  return {type: types.LOGIN_ERROR}
+}
+
 export function updateFormData(login) {
   return function (dispatch) {
     dispatch(beginUpdateLoginForm());
     loadLoginApi.loadLoginApi(login).then(function (res) {
       dispatch(updatedLoginForm(res));
+    }).catch(error => {
+      localStorage.setItem('token', '');
+      dispatch(loginError());
+      throw (error);
     })
   };
 }
 
 export function updatedLoginForm(res) {
-  localStorage.setItem('token', res.data.token);
-  console.log("success");
+  let token = "";
+  if (res.data.user.role != 0) token = res.data.token;
+  localStorage.setItem('token', token);
   return ({
     type: types.UPDATED_LOGIN_FORM,
-    token: res.data.token,
+    token: token,
     user: res.data.user
   })
 }

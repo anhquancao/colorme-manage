@@ -17,7 +17,6 @@ class DashboardContainer extends React.Component {
     this.loadDashboardDataGen = this.loadDashboardDataGen.bind(this);
     this.changeGen = this.changeGen.bind(this);
     let token = localStorage.getItem('token');
-    console.log(token);
     if (token == null ) context.router.push('/login')
   }
 
